@@ -20,6 +20,9 @@ pip install python-language-server
 git clone https://github.com/TypeFox/monaco-languageclient.git
 cd monaco-languageclient
 npm install
+cd example
+npm install
+npm run start:ext
 ```
 
 ## Examples
