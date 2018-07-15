@@ -34,6 +34,7 @@ const editor = monaco.editor.create(document.getElementById("container")!, {
 // create the web socket
 const url = createUrl('/sampleServer')
 const webSocket = createWebSocket(url);
+console.log("clinet url", url)
 // listen when the web socket is opened
 listen({
     webSocket,
@@ -82,5 +83,6 @@ function createWebSocket(url: string): WebSocket {
         maxRetries: Infinity,
         debug: false
     };
+    console.log("client createWebSocket")
     return new ReconnectingWebSocket(url, undefined, socketOptions);
 }

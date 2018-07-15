@@ -30,6 +30,7 @@ const wss = new ws.Server({
 });
 server.on('upgrade', (request: http.IncomingMessage, socket: net.Socket, head: Buffer) => {
     const pathname = request.url ? url.parse(request.url).pathname : undefined;
+    console.log("*****", pathname)
     if (pathname === '/sampleServer') {
         wss.handleUpgrade(request, socket, head, webSocket => {
             const socket: rpc.IWebSocket = {
