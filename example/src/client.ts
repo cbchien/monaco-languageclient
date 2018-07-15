@@ -12,20 +12,21 @@ const ReconnectingWebSocket = require('reconnecting-websocket');
 
 // register Monaco languages
 monaco.languages.register({
-    id: 'json',
+    id: 'python',
     extensions: ['.json', '.bowerrc', '.jshintrc', '.jscsrc', '.eslintrc', '.babelrc'],
-    aliases: ['JSON', 'json'],
+    aliases: ['PYTHON', 'Python', 'python'],
     mimetypes: ['application/json'],
 });
 
 // create Monaco editor
-const value = `{
-    "$schema": "http://json.schemastore.org/coffeelint",
-    "line_endings": "unix"
-}`;
+const value = `def test(self):
+    print("123")
+`;
 const editor = monaco.editor.create(document.getElementById("container")!, {
     model: monaco.editor.createModel(value, 'json', monaco.Uri.parse('inmemory://model.json')),
     glyphMargin: true,
+    autoIndent: true,
+    language: 'python',
     lightbulb: {
         enabled: true
     }
@@ -52,7 +53,7 @@ function createLanguageClient(connection: MessageConnection): BaseLanguageClient
         name: "Sample Language Client",
         clientOptions: {
             // use a language id as a document selector
-            documentSelector: ['json'],
+            documentSelector: ['python'],
             // disable the default error handler
             errorHandler: {
                 error: () => ErrorAction.Continue,

@@ -11,9 +11,12 @@ NPM module to connect Monaco editor with language servers
 
 Click [here](http://typefox.io/teaching-the-language-server-protocol-to-microsofts-monaco-editor) for a detail explanation how to connect the Monaco editor to your language server.
 
+Click [here](https://github.com/palantir/python-language-server) for a detail on Python Language Server
+
 ## Getting started
 
 ```bash
+pip install python-language-server
 git clone https://github.com/TypeFox/monaco-languageclient.git
 cd monaco-languageclient
 npm install
