@@ -17,7 +17,7 @@ Click [here](https://github.com/palantir/python-language-server) for a detail on
 
 ```bash
 pip install python-language-server
-git clone https://github.com/TypeFox/monaco-languageclient.git
+git clone https://github.com/cbchien/monaco-languageclient.git
 cd monaco-languageclient
 npm install
 cd example
